@@ -1,0 +1,77 @@
+.plant-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.plant-svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.soil {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+.stem-anim {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: growStem 2s ease-out forwards;
+}
+
+@keyframes growStem {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.leaf-group {
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(0);
+    animation: bloom 1s ease-out 1s forwards;
+    /* Delayed start */
+}
+
+.bloom-1 {
+    animation-delay: 0.5s;
+}
+
+.bloom-2 {
+    animation-delay: 1.5s;
+}
+
+.bloom-3 {
+    animation-delay: 2.5s;
+}
+
+@keyframes bloom {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.flower {
+    opacity: 0;
+    transform-origin: 100px 100px;
+    animation: rotateBloom 3s ease-in-out infinite alternate, bloom 1s ease-out 2s forwards;
+}
+
+@keyframes rotateBloom {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}

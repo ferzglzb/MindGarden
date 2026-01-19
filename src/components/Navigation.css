@@ -1,0 +1,34 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px;
+    /* Consisten with app container */
+    margin: 0 auto;
+    height: 80px;
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    padding-bottom: 20px;
+    /* Safe area */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 10px;
+    transition: var(--transition-smooth);
+}
+
+.nav-item.active {
+    color: var(--color-sage);
+    transform: translateY(-2px);
+}
